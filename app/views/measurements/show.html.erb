@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Weight:</b>
+  <%= @measurement.weight %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @measurement.height %>
+</p>
+
+<p>
+  <b>Rightarm:</b>
+  <%= @measurement.rightArm %>
+</p>
+
+<p>
+  <b>Leftarm:</b>
+  <%= @measurement.leftArm %>
+</p>
+
+<p>
+  <b>Back:</b>
+  <%= @measurement.back %>
+</p>
+
+<p>
+  <b>Waits:</b>
+  <%= @measurement.waits %>
+</p>
+
+<p>
+  <b>Rightleg:</b>
+  <%= @measurement.rightLeg %>
+</p>
+
+<p>
+  <b>Leftleg:</b>
+  <%= @measurement.leftLeg %>
+</p>
+
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>

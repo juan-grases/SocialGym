@@ -1,0 +1,68 @@
+<div class="row">
+  <aside class= "span3">
+    <section>
+      <h1>
+        <%= gravatar_for @user, size: 170%>
+        
+      </h1>
+	 </section>
+	
+	
+   <section>
+      <%= render 'shared/stats' %>
+   </section>
+  </aside>
+  <section>
+  <div class="span9">
+	
+		<h1><%= @user.name %></h1>
+		<%= render 'follow_form' if signed_in? %>
+  </div>
+  </section>
+
+ 
+ 
+</div>
+
+	<p></p>
+	<p></p>
+	<div class="row">
+		<section>
+		
+		<nav>
+		
+		
+		
+		<ul class="nav nav-tabs" id="myTab">
+		 
+		  <li><a href="#rutinas" data-toggle="tab">Rutinas</a></li>
+		  <li><a href="#medidas" data-toggle="tab">Medidas</a></li>
+		  <li><a href="#retos" data-toggle="tab">Retos</a></li>
+		</ul>
+		 
+		<div class="tab-content">
+		  
+		  <div class="tab-pane active" id="rutinas"><% if current_user? @user %>
+													<p><%= link_to 'Nueva Rutina', new_routine_path %></p>
+     										<% end %>
+											<% if @user.routines.any? %>
+												<ol class="routines">
+												<%= render @routines %> 
+												</ol>
+											<% else %>
+												<p>Este usuario no ha creado ninguna rutina</p>
+											<% end %></div>
+		  <div class="tab-pane" id="medidas"><%= render "/measurements/index" %></div>
+		  <div class="tab-pane" id="retos"><%= render "/goals/index" %></div>
+		</div>
+		</nav>
+		</section>
+		 
+		<script>
+		  $(function () {
+			$('#myTab a:first').tab('show');
+		  })
+		</script>
+	</div>
+
+	

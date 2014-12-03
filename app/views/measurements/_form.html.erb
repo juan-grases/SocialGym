@@ -1,0 +1,49 @@
+<%= form_for([@user, @measurement], remote: true) do |f| %>
+  <% if @measurement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@measurement.errors.count, "error") %> prohibited this measurement from being saved:</h2>
+
+      <ul>
+      <% @measurement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :weight, "Peso:" %><br />
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :height, "Altura:" %><br />
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :rightArm, "Brazo derecho:" %><br />
+    <%= f.number_field :rightArm %>
+  </div>
+  <div class="field">
+    <%= f.label :leftArm, "Brazo izquierdo:" %><br />
+    <%= f.number_field :leftArm %>
+  </div>
+  <div class="field">
+    <%= f.label :back, "Espalda:" %><br />
+    <%= f.number_field :back %>
+  </div>
+  <div class="field">
+    <%= f.label :waits, "Cintura:" %><br />
+    <%= f.number_field :waits %>
+  </div>
+  <div class="field">
+    <%= f.label :rightLeg, "Pierna derecha:" %><br />
+    <%= f.number_field :rightLeg %>
+  </div>
+  <div class="field">
+    <%= f.label :leftLeg, "Pierna Izquierda:" %><br />
+    <%= f.number_field :leftLeg %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Crear registro" %>
+  </div>
+<% end %>

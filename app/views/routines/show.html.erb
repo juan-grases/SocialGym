@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="page-header">
+		<h1>Rutina <%= @routine.name %></h1>
+	</div>
+		<h3>Dias (<%=@routine.routine_days.count %>)  </h3>
+		<ul class= "routineDays">
+			<% @routine.routine_days.each_with_index do |routine_day, indice|  %>
+			
+				<%= render routine_day, index: indice %>
+			<% end %>
+		</ul>
+	
+</div>

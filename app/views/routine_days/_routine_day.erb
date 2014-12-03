@@ -1,0 +1,10 @@
+<li >
+<h3>Dia # <%= index+1 %></h3>
+<p>Descripción :<%= routine_day.cardio_information %></p>
+<h4>Ejercicios </h4>
+	<ol class= "excercises">
+		<% routine_day.excercises.each do |excercise|  %>
+			<%= render excercise %>
+		<% end %>
+	</ol>
+</li>

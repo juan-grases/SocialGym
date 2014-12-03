@@ -1,0 +1,18 @@
+<div class="fields">
+  <%= link_to_function "Quitar Ejercicio", "remove_fields(this)" %>
+<table>
+<tr>
+  <td><%= f.label :excercise_name, "Nombre del ejercicio" %><br /></td>
+ <td> <%= f.text_field :excercise_name, class: 'excercise_name',  data: {autocomplete_source: single_excercises_path} %></td>
+ </tr>
+ <tr>
+  <td><%= f.label :series, "Cantidad de series" %></td>
+  <td><%= f.number_field :series %></td>
+ </tr>
+ <tr>
+  <td><%= f.label :reps, "Cantidad de repeticiones" %></td>
+  <td><%= f.number_field :reps %></td>
+ </tr>
+ </table>
+ 
+</div>

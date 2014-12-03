@@ -1,0 +1,15 @@
+
+<div class="fields day">
+<%= link_to_remove_fields "Quitar Dia", f %>
+	<h2> Dia de Rutina </h2>
+  
+  <%= f.label :cardio_information, "Informacion de cardio" %><br />
+  
+  <%= f.text_area :cardio_information, :rows => 3 %><br />
+  
+
+<%= f.fields_for :excercises do |builder| %>
+  <%= render 'excercise_fields', :f => builder %>
+<% end %>
+<p><%= link_to_add_fields "Agregar Ejercicio", f, :excercises %></p>
+</div>

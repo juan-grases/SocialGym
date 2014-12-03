@@ -1,0 +1,14 @@
+<h2>Lista de Retos</h2>
+
+<h3>Retos por completar</h3>
+<% if current_user? @user %>
+	<%= link_to "Nuevo Reto", new_user_goal_path(@user), id: "new_link", remote: true %>
+<%end%>
+<div class="goals" id="incomplete_goals">
+  <%= render @incomplete_goals %>
+</div>
+
+<h3>Retos completados</h3>
+<div class="goals" id="complete_goals">
+  <%= render @complete_goals %>
+</div>

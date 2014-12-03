@@ -1,0 +1,24 @@
+<h2>Listado de medidas de <%= @user.name %></h2>
+	<table class="table table-bordered" id = "meausurementTable" >
+	  <tr>
+		<th>Fecha</th>
+		<th>Peso</th>
+		<th>Altura</th>
+		<th>Brazo Derecho</th>
+		<th>Brazo Izquierdo</th>
+		<th>Espalda</th>
+		<th>Cintura</th>
+		<th>Pierna Derecha</th>
+		<th>Pierna Izquierda</th>
+		<th></th>
+		
+		
+		
+	  </tr>
+
+	<%= render @measurements %>
+
+	</table>
+<% if current_user? @user %>
+<%= link_to 'Nuevo registro de medidas', new_user_measurement_path(@user),id: "new_link_measurement", remote: true %>
+<% end %>

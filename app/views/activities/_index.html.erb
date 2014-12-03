@@ -1,0 +1,9 @@
+<% @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: current_user.followed_users, owner_type: "User") %>
+
+<% @activities.each do |activity| %>
+  <div class="activity">
+	<%= render activity.owner %>
+    
+    <%= render_activity activity %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+
+<h1>Crea tu propia rutina</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@routine) do |f| %>
+	
+	  <%= render 'shared/error_messages', object: f.object %>
+	  
+	  <%= f.check_box :private %>
+	  <%= f.label :private, "privado",class: "checkbox inline" %>
+	  <p></p>
+      <%= f.label :name, "Nombre de la rutina" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :description,"Descripción" %>
+      <%= f.text_area :description, rows: 3 %>
+	  <%= f.fields_for :routine_days do |builder| %>
+		<%= render "routine_day_fields", f: builder %>
+	  
+	  <% end %>
+	  <p><%= link_to_add_fields "Agregar Dia", f, :routine_days %></p>
+	  <%= f.submit "Crear mi rutina", class: "btn btn-large btn-primary" %>
+		 
+	
+     
+    <% end %>
+	
+	
+  </div>
+</div>

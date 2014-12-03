@@ -1,0 +1,12 @@
+<tr id="edit_measurement_<%= measurement.id %>">
+	<td><%= measurement.created_at %>
+    <td><%= measurement.weight %> kg</td>
+    <td><%= measurement.height %> cm</td>
+    <td><%= measurement.rightArm %> cm</td>
+    <td><%= measurement.leftArm %> cm</td>
+    <td><%= measurement.back %> cm</td>
+    <td><%= measurement.waits %> cm</td>
+    <td><%= measurement.rightLeg %> cm</td>
+    <td><%= measurement.leftLeg %> cm</td>
+    <td><%= link_to 'Eliminar', [@user,measurement], method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+ </tr>

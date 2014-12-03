@@ -1,0 +1,4 @@
+$('#new_goal').remove();
+$('#new_link').show();
+$('#incomplete_goals').append('<%= j render(@goal) %>');
+$('#edit_goal_<%= @goal.id %>').submitOnCheck();

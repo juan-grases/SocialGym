@@ -1,0 +1,20 @@
+
+<% if signed_in? %>
+
+	<h3>Actividad de las personas a las que sigues</h3>
+      <section>
+        <%= render 'activities/index' %>
+      </section>
+<% else %>
+
+	<div class="center hero-unit">
+	  <h1>Bienvenido a SocialGym</h1>
+
+	  <h2>
+		Esta es la página principal de la red social SocialGym
+	  </h2>
+
+	  
+	</div>
+  
+<% end %>

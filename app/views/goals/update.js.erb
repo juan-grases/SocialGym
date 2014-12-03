@@ -1,0 +1,11 @@
+var formGoal =   $('#edit_goal_<%= @goal.id %>');
+<% if @goal.complete? %>
+  formGoal.find('.timeAgo').text('<%= time_ago_in_words(@goal.updated_at) %> ago.')
+  formGoal.appendTo('#complete_goals');
+
+<% else %>
+  formGoal.find('.timeAgo').text('<%= time_ago_in_words(@goal.created_at) %> ago.')
+  formGoal.appendTo('#incomplete_goals');
+ 
+<% end %>
+

@@ -1,0 +1,17 @@
+<%= form_for([@user, goal], remote: true) do |f| %>
+<% if current_user? @user %>
+  <%= f.check_box :complete %>
+  <%= f.submit "Actualizar"%>
+ <% end %>
+  <%= f.label :complete, goal.name, class: "checkbox inline" %>
+  <p></p>
+  <% if goal.complete %>
+  
+		<span class="timeAgo"> <%= time_ago_in_words(goal.updated_at) %> ago. </span>
+  <% else %>
+	<span class="timeAgo"> <%= time_ago_in_words(goal.created_at) %> ago </span>
+  <% end %>
+  <% if current_user? @user %>
+    <%= link_to "(eliminar)", [@user,goal], method: :delete, data: {confirm: "¿Estas seguro?"}, remote: true %>
+  <% end%>
+<% end %>
